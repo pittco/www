@@ -11,6 +11,19 @@
         [LOGO]
 
     .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
-      %ul
+      %ul.links
         %li=link_to "Next Event", "#next-event"
-        %li=link_to "Who We Are", "#about-us"
+        %li=link_to "Tickets", "#tickets"
+        %li=link_to "Venue", "#venue"
+        %li=link_to "About Us", "#about-us"
+
+        %li.dropdown
+          %a.dropbown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+            Past Events 
+            %span.caret
+
+          %ul.dropdown-menu
+            %li=link_to "Delirium", "#"
+            %li=link_to "Insomnia", "#"
+
+        
