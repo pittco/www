@@ -1,0 +1,46 @@
+@import "normalize-rails";
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body { 
+	padding-top: 70px; 
+}
+
+nav {
+  @extend .navbar, .navbar-default, .navbar-fixed-top;
+
+  .header {
+    @extend .navbar-header;
+  }
+
+  ul {
+    @extend .nav, .navbar-nav, .navbar-right;
+  }
+
+  a.brand {
+    @extend .navbar-brand;
+  }
+}
+
+.social-links {
+  a {
+    @extend .btn, .btn-default, .btn-lg;
+  }
+
+  @media(max-width:1199px) {
+    margin-top: 15px;
+  }
+
+  @media(max-width:767px) {
+    li {
+      display: block;
+      margin-bottom: 20px;
+      padding: 0;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
