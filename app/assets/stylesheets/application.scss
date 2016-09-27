@@ -7,6 +7,17 @@ body {
 	padding-top: 70px; 
 }
 
+.header {
+  a.logo {
+    @extend .navbar-brand;
+
+    img {
+      width: 110px;
+      margin-top: -2.5px;
+    }
+  }
+}
+
 nav {
   @extend .navbar, .navbar-default, .navbar-fixed-top;
 
