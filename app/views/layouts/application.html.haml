@@ -18,34 +18,7 @@
     = render "nav"
     = render "next_event"
     = render "venue"
-
-
-    %a(name="sponsors")
-    .sponsors
-      .info
-        %h1 Sponsors
-
-        %h2 Gold Tier
-        = render "sponsors"
-
-        %h2 Silver Tier
-        .container
-          .row
-            .col-md-6
-              = image_tag "pittco-logo.png", style: "width: 375px"
-            .col-md-6
-              = image_tag "pittco-logo.png", style: "width: 375px"
-
-        %h3 Bronze Tier
-        .container
-          .row
-            .col-sm-4
-              = image_tag "pittco-logo.png", style: "width: 200px"
-            .col-sm-4
-              = image_tag "pittco-logo.png", style: "width: 200px"
-            .col-sm-4
-              = image_tag "pittco-logo.png", style: "width: 200px"
-
+    = render "sponsors"
     = render "about"
 
     %hr
