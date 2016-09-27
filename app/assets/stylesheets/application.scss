@@ -14,6 +14,20 @@ body {
     img {
       height: 20px;
     }
+
+    .mobile-logo {
+      display: none;
+    }
+
+    @media(max-width:768px) {
+      .mobile-logo {
+        display: block;
+      }
+      
+      .desktop-logo {
+        display: none;
+      }
+    }
   }
 }
 
