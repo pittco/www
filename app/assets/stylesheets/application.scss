@@ -80,16 +80,25 @@ a.button {
   }
 }
 
+.content-base {
+  @extend .container;
+
+  padding-top: 10%;
+  padding-bottom: 70%;
+
+  border: 2px solid;
+}
+
 .next-event {
-  @extend .container, .text-center;
+  @extend .content-base, .text-center;
 }
 
 .about {
-  @extend .container;
+  @extend .content-base;
 }
 
 .venue {
-  @extend .container;
+  @extend .content-base;
 }
 
 .social-links {
