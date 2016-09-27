@@ -23,6 +23,48 @@ nav {
   }
 }
 
+a.button {
+  @extend .btn, .btn-default, .btn-lg;
+}
+
+.next-event {
+  @extend .container, .text-center;
+
+  .info {
+    @extend .row, .col-lg-12;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+
+    margin-bottom: 75%;
+
+    @media(max-width:768px) {
+      margin-bottom: 100%;
+    }
+
+    @media(max-width:420px) {
+      h2 {
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+    }
+
+    @media(max-width:360px) {
+      h2 {
+        font-size: 16px;
+      }
+
+      h3 {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 footer {
   @extend .container;
   
@@ -30,7 +72,7 @@ footer {
     @extend .row, .col-lg-12, .text-center;
 
     a {
-      @extend .btn, .btn-default, .btn-lg;
+      @extend a.button; 
     }
 
     @media(max-width:1199px) {
