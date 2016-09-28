@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 20160928153041) do
   create_table "seating_rows", force: :cascade do |t|
     t.string   "name"
     t.integer  "seating_chart_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.boolean  "single_column",    default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   add_index "seating_rows", ["seating_chart_id"], name: "index_seating_rows_on_seating_chart_id"
