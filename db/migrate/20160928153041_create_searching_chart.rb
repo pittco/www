@@ -15,6 +15,7 @@ class CreateSearchingChart < ActiveRecord::Migration
     create_table :seating_rows do |t|
       t.string :name
       t.integer :seating_chart_id
+      t.boolean :single_column, default: false
       t.timestamps null: false
     end
     add_index :seating_rows, :seating_chart_id

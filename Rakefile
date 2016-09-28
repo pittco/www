@@ -18,5 +18,11 @@ task :example_seating_chart => :environment do
     end
   end
 
+  chart.seating_rows.create(name: "Baller Row", single_column: true).tap do |row|
+    8.times do |n|
+      row.seats.create position: n
+    end
+  end
+
   puts "All Done"
 end
