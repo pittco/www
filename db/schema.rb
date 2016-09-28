@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927221853) do
+ActiveRecord::Schema.define(version: 20160928153041) do
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "start_dt"
+    t.datetime "end_dt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "seating_charts", force: :cascade do |t|
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "seating_rows", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "seating_chart_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "seating_rows", ["seating_chart_id"], name: "index_seating_rows_on_seating_chart_id"
+
+  create_table "seats", force: :cascade do |t|
+    t.integer  "position"
+    t.integer  "seating_row_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "seats", ["seating_row_id"], name: "index_seats_on_seating_row_id"
+  add_index "seats", ["user_id"], name: "index_seats_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
