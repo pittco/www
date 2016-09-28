@@ -18,6 +18,8 @@ gem 'normalize-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails'
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
@@ -30,4 +32,3 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
 end
-

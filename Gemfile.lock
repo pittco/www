@@ -85,6 +85,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    newrelic_rpm (3.16.2.321)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -186,6 +187,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   momentjs-rails
+  newrelic_rpm
   normalize-rails
   omniauth-google-oauth2
   pg
