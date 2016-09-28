@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 gem 'omniauth-google-oauth2'
 gem 'rails_12factor'
+gem 'puma'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -15,6 +16,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'normalize-rails'
+
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails'
 
@@ -30,4 +32,3 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
 end
-
