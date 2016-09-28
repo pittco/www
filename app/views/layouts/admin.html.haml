@@ -7,7 +7,7 @@
     %meta(name="description" content="")
     %meta(name="author" content="")
 
-    %title Pittco Admin
+    %title Pittco Web Admin
 
     = stylesheet_link_tag 'admin', media: 'all'
     = csrf_meta_tags
@@ -22,7 +22,10 @@
             %span.icon-bar
             %span.icon-bar
 
-          %a.navbar-brand(href="/admin") Pittco Admin
+          %a.logo(href="#")
+            = image_tag "pittco-logo.png"
+            %span Web Admin
+
 
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav

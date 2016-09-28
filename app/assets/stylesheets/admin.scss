@@ -11,3 +11,24 @@ body {
   @extend .bg-danger;
   margin-top: 1em;
 }
+
+
+/* TODO - Move common stuff into single stylesheet, or something */
+a.logo {
+  @extend .navbar-brand;
+
+  img {
+    margin-left: -10px;
+    margin-top: -10px;
+    height: 40px;
+    display: inline;
+  }
+
+  @media(max-width:768px) {
+    img {
+      margin-left: -5px;
+      margin-top: -5px;
+      height: 30px;
+    }
+  }
+}
