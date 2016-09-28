@@ -21,6 +21,7 @@ gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails'
 
 gem 'rollbar'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug'
