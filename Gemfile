@@ -20,6 +20,8 @@ gem 'normalize-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails'
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
