@@ -4,7 +4,8 @@
 @import "bootstrap";
 
 body { 
-	padding-top: 70px; 
+	padding-top: 70px;
+  position: relative;
 }
 
 .header {
@@ -80,16 +81,51 @@ a.button {
   }
 }
 
+.content-base {
+  @extend .container;
+
+  padding-top: 10%;
+  padding-bottom: 70%;
+
+  border: 2px solid;
+
+  max-width: 1080px;
+  font-size: 135%;
+
+  @media(max-width:767px) {
+    font-size: 115%;
+
+    h2 {
+      font-size: 16px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+  }
+}
+
+.carousel-inner {
+  img {
+    @extend .text-center;
+  }
+}
+
+
+.sponsors {
+  @extend .content-base;
+}
+
 .next-event {
-  @extend .container, .text-center;
+  @extend .content-base, .text-center;
 }
 
 .about {
-  @extend .container;
+  @extend .content-base;
 }
 
 .venue {
-  @extend .container;
+  @extend .content-base;
 }
 
 .social-links {
