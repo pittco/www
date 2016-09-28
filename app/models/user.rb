@@ -2,6 +2,15 @@ class User < ActiveRecord::Base
   has_many :posts
   serialize :data_hash
 
+  def admin?
+    !!email.match(/\@pittco.org$/)
+  end
+
+  # TODO: Make this not a stub
+  def paid?
+    true
+  end
+
   def self.from_omniauth(access_token)
     data = access_token.info
     return nil unless data['email'].match /\@pittco.org$/
