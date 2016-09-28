@@ -21,6 +21,8 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
 
           %a.logo(href="#")
             = image_tag "pittco-logo.png"
@@ -29,9 +31,21 @@
 
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li= link_to "Item 1", "#"
-            %li= link_to "Item 2", "#"
-            %li= link_to "Item 3", "#"
+            %li= link_to "Communications", "#"
+            %li= link_to "Tickets", "#"
+            %li= link_to "Seating Chart", "#"
+            %li= link_to "Schedule", "#"
+            %li= link_to "Intranet", "#"
+
+            %li.dropdown
+              %a.dropbown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                Super Admin 
+                %span.caret
+
+              %ul.dropdown-menu
+                %li.dropdown-header Staff Management 
+                %li=link_to "Users", "#"
+
 
     .container
       - if flash[:alert]
