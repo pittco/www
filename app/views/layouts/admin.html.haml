@@ -1,0 +1,41 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
+    %meta(name="description" content="")
+    %meta(name="author" content="")
+
+    %title Pittco Admin
+
+    = stylesheet_link_tag 'admin', media: 'all'
+    = csrf_meta_tags
+
+  %body
+    %nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+
+          %a.navbar-brand(href="/admin") Pittco Admin
+
+        #navbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li= link_to "Item 1", "#"
+            %li= link_to "Item 2", "#"
+            %li= link_to "Item 3", "#"
+
+    .container
+      - if flash[:alert]
+        %p.error-message
+          = flash[:alert].join(", ")
+
+      = yield
+    
+    = javascript_include_tag 'admin'
+    = yield :footer
