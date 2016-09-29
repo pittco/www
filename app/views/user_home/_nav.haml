@@ -1,0 +1,33 @@
+%nav(role="navigation")
+  .container
+    .header
+      %button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+        %span(class="sr-only") Toggle navigation
+        %span(class="icon-bar")
+        %span(class="icon-bar")
+        %span(class="icon-bar")
+        %span(class="icon-bar")
+
+      .branding
+        %a.logo(href="#")
+          = image_tag "pittco-logo.png"
+          %span Intranet 
+
+    .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+      %ul.links
+        %li=link_to "Buy Tickets", "#next-event"
+        %li=link_to "Reserve a Seat", "#venue"
+        %li=link_to "Contact Support", "#sponsors"
+
+        %li.dropdown
+          = image_tag current_user.profile_photo,
+            :style => "border-radius: 50%;",
+            :class => "dropdown-toggle",
+            :"data-toggle" => "dropdown",
+            :role => "button", 
+            :"aria-haspopup" => "true", 
+            :"aria-expanded" => "false"
+
+          %ul.dropdown-menu
+            %li=link_to "Settings", "#"
+            %li=link_to "Logout", "#"
