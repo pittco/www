@@ -12,6 +12,10 @@ body {
   a.logo {
     @extend .navbar-brand;
 
+    span {
+      font-size: 105%;
+    }
+
     img {
       margin-left: -10px;
       margin-top: -10px;
