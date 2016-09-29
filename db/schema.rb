@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20160928153041) do
   add_index "seats", ["user_id"], name: "index_seats_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
     t.string   "email"
     t.text     "data_hash"
     t.datetime "created_at", null: false
@@ -57,6 +56,5 @@ ActiveRecord::Schema.define(version: 20160928153041) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
