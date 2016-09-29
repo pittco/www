@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   end
 
   get '/my' => 'user_home#index'
+  namespace :my do
+    resources :seats
+  end
 
   get '/seating' => 'seating#index'
 
