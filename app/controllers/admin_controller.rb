@@ -8,9 +8,4 @@ class AdminController < ApplicationController
     redirect_to '/auth/google_oauth2' unless (current_user && current_user.admin?)
   end
 
-  helper_method def current_user
-    @current_user ||= User.find(session[:user_id])
-  rescue
-    nil
-  end
 end

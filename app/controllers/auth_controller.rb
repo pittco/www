@@ -12,11 +12,15 @@ class AuthController < ApplicationController
   def oauth2_callback
     user = User.from_omniauth request.env["omniauth.auth"]
 
-    if user
-      session[:user_id] = user.id
+    if user.nil?
+      render inline: 'no_entry', layout: false
+    end
+
+    session[:user_id] = user.id
+    if user.admin?
       redirect_to '/admin'
     else
-      render 'no_entry', layout: false
+      redirect_to '/'
     end
   end
 
