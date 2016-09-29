@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   has_many :posts
   serialize :data_hash
 
+  def profile_photo
+    data_hash["info"]["image"]
+  end
+
   def admin?
     !!email.match(/\@pittco.org$/)
   end
