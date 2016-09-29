@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-md-8
+      %form
+        .form-group
+          %label(for="seat-selection") Seat Selection 
+          %select.form-control#seat-selection
+            - SeatingChart.first.seats.each do |seat|
+              %option="Row #{seat.seating_row.id} - Seat #{seat.id}"
+
+        %button(type="submit" class="btn btn-default") Submit
