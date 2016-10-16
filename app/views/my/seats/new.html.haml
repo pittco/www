@@ -1,34 +1,25 @@
-.container
-  .row
-    .col-md-8
-      %form
-        .form-group
-          %label(for="seat-selection") Seat Selection 
-          %select.form-control#seat-selection
-            %option="Row 1 - Seat 1"
+#seating-chart
+  .container
+    .row
+      .col-md-12
+        %h1 Seating Chart
+        %button(type="submit" class="btn btn-default") Reserve Seat
 
-        %button(type="submit" class="btn btn-default") Submit
-
-.container
-  %h1 Seating Chart
-
-.container-fluid
-  .row
-    .col-md-12
-      %table.table.table-bordered(style="width: 100%; border: 1px solid;")
-        - @room.each do |row|
-          %tr(style="border: 1px solid;" colspan="#{row.length}")
-            %td=rand(1...4)
-            - row.each do |tile|
-              - if tile.seatable?
-                - tile.seats.each do |seat| 
-                  %td(style="border: 1px solid;")
-                    .seat-cell(data-seat-id="#{seat.id}")
+  .container-fluid
+    .row
+      .col-md-12
+        %table.table.table-bordered(style="width: 100%; border: 1px solid;")
+          - @room.each do |row|
+            %tr(style="border: 1px solid;" colspan="#{row.length}")
+              - row.each do |tile|
+                - if tile.seatable?
+                  - tile.seats.each do |seat| 
+                    %td.seat-cell(style="border: 1px solid;" data-seat-id="#{seat.id}")
                       %strong Seat
                       -# %span
                         = seat.id
-              - else
-                %td(style="border: 1px solid;" colspan="#{tile.length}")
-                  Empty Space
-                  %span
-                    = "#{tile.length} Feet"
+                - else
+                  %td.empty-space(style="border: 1px solid;" colspan="#{tile.length}")
+                    Empty Space
+                    %span
+                      = "#{tile.length} Feet"

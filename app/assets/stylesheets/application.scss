@@ -157,3 +157,17 @@ footer {
   @extend .container;
   padding-bottom: 20px;  
 }
+
+#seating-chart {
+  td.seat-cell {
+    background-color: #5cb85c;
+  }
+
+  td.empty-space {
+    background-color: #72c5f7;
+  }
+
+  td.seat-chosen {
+    background-color: #ffffff;
+  }
+}
