@@ -10,6 +10,20 @@
 
         %button(type="submit" class="btn btn-default") Submit
 
+.container-fluid
+  %h1 Seating Chart
+
+  .row
+    .col-md-12
+      %table.table.table-bordered(style="width: 100%; border: 1px solid;")
+        - @room.each do |row|
+          %tr(style="border: 1px solid;" colspan="#{row.length}")
+            %td=rand(1...4)
+            - row.each do |tile|
+              %td(style="border: 1px solid;" colspan="#{tile.length}")
+                = tile.inspect 
+
+
 .container
   %h1 Seating Chart
 
