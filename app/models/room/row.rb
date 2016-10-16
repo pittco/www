@@ -10,7 +10,7 @@ module Room
     end
 
     def each
-      @tiles.each do |key, tile|
+      @tiles.each do |tile|
         yield tile
       end
     end
@@ -29,7 +29,7 @@ module Room
     end
 
     def length
-      @tiles.values.map(&:length).inject(0, :+)
+      @tiles.map(&:length).inject(0, :+)
     end
 
     def width
