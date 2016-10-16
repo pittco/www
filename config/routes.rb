@@ -11,8 +11,6 @@ Rails.application.routes.draw do
     resources :seats
   end
 
-  get '/seating' => 'seating#index'
-
   post '/logout' => 'auth#logout'
   get '/login' => 'auth#login'
   get '/auth/google_oauth2/callback' => 'auth#oauth2_callback'

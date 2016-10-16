@@ -5,7 +5,7 @@
         .form-group
           %label(for="seat-selection") Seat Selection 
           %select.form-control#seat-selection
-            - SeatingChart.first.seats.each do |seat|
+            - @chart.seats.each do |seat|
               %option="Row #{seat.seating_row.id} - Seat #{seat.id}"
 
         %button(type="submit" class="btn btn-default") Submit
@@ -14,21 +14,14 @@
   %h1 Seating Chart
 
   .row
-    - SeatingChart.first.seating_rows[0,6].each do |row|
-      .col-md-2
-        - if row.single_column
-          %strong= "Baller Row #{row.id}"
+    - @chart.seating_sections.each do |section|
+      - [section.left_row, section.right_row].each do |row|
+        .col-md-2
+          %strong= "Row #{row.id} Section #{row.seating_section.id}"
           - row.seats.each do |seat|
-            - taken = rand(1..2) == 1 ? 'red' : 'green'
+            - taken = rand(1..4) == 4 ? 'red' : 'green'
             .row
               .col-xs-1(style="border: 2px solid; padding: 25px; background-color: #{taken}")
                 = seat.id
 
-        - else
-          %strong= "Row #{row.id}"
-          - row.seats.each_slice(2).each do |seats|
-            - taken = rand(1..4) == 4 ? 'red' : 'green'
-            .row
-              - seats.each do |seat|
-                .col-xs-1(style="border: 2px solid; padding: 25px; background-color: #{taken}")
-                  = seat.id
+    .col-md-2

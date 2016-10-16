@@ -3,6 +3,7 @@ class My::SeatsController < ApplicationController
   end
 
   def new
+    @chart = SeatingChart.first
   end
 
   def create

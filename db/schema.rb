@@ -29,13 +29,24 @@ ActiveRecord::Schema.define(version: 20160928153041) do
 
   create_table "seating_rows", force: :cascade do |t|
     t.string   "name"
-    t.integer  "seating_chart_id"
-    t.boolean  "single_column",    default: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.integer  "seating_section_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
-  add_index "seating_rows", ["seating_chart_id"], name: "index_seating_rows_on_seating_chart_id"
+  add_index "seating_rows", ["seating_section_id"], name: "index_seating_rows_on_seating_section_id"
+
+  create_table "seating_sections", force: :cascade do |t|
+    t.integer  "seating_chart_id"
+    t.integer  "left_seating_row_id"
+    t.integer  "right_seating_row_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "seating_sections", ["left_seating_row_id"], name: "index_seating_sections_on_left_seating_row_id"
+  add_index "seating_sections", ["seating_chart_id"], name: "index_seating_sections_on_seating_chart_id"
+  add_index "seating_sections", [nil], name: "index_seating_sections_on_right_seating_section_id"
 
   create_table "seats", force: :cascade do |t|
     t.integer  "position"
