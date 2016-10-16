@@ -20,7 +20,7 @@ module Room
       if enough_room?(tile, position: position)
         @tiles[position] = tile
       else
-        # Todo make this a proper exception
+        # TODO make this a proper exception
         raise 'Row is full.'
       end
     end
@@ -44,7 +44,6 @@ module Room
         (length + tile.length)
       end <= @max_length
     end
-
   end
 
   class Room
