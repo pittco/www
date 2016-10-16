@@ -2,12 +2,18 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+# Require the sabyon middleware library
+require_relative '../lib/sabayon'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module Www
   class Application < Rails::Application
+    # Configure the Sabayon Middleware to allow for automatic setup of letsencrypt certs.
+    config.middleware.insert_before 0, SabayonMiddleware
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
