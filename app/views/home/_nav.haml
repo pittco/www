@@ -1,0 +1,32 @@
+%nav(role="navigation")
+  .container
+    .header
+      %button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+        %span(class="sr-only") Toggle navigation
+        %span(class="icon-bar")
+        %span(class="icon-bar")
+        %span(class="icon-bar")
+        %span(class="icon-bar")
+
+      .branding
+        %a.logo(href="#")
+          = image_tag "pittco-logo.png"
+
+    .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+      %ul.links
+        %li=link_to "Next Event", "#next-event"
+        %li=link_to "Venue", "#venue"
+        %li=link_to "Sponsors", "#sponsors"
+        %li=link_to "About Us", "#about"
+        %li=link_to "Blog", "https://medium.com/pittco"
+
+        %li.dropdown
+          %a.dropbown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+            Past Events
+            %span.caret
+
+          %ul.dropdown-menu
+            %li.dropdown-header 2016
+            %li=link_to "Delirium", "#"
+            %li.dropdown-header 2015
+            %li=link_to "Insomnia", "#"

@@ -7,7 +7,7 @@
     %meta(name="description" content="")
     %meta(name="author" content="")
 
-    %title Pittco Intranet
+    %title Pittco
 
     %link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css")
 
@@ -17,12 +17,10 @@
 
   %body
     = render "nav"
-    =# render "next_event"
-    =# render "venue"
-    =# render "sponsors"
-    =# render "about"
-
-    = yield
+    = render "next_event"
+    = render "venue"
+    = render "sponsors"
+    = render "about"
 
     %hr
 

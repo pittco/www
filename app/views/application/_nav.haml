@@ -8,25 +8,25 @@
         %span(class="icon-bar")
         %span(class="icon-bar")
 
-      .branding
-        %a.logo(href="#")
-          = image_tag "pittco-logo.png"
+      %a.logo(href="#") 
+        = image_tag "pittco-logo.png"
+        %span Intranet
 
     .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
       %ul.links
-        %li=link_to "Next Event", "#next-event"
-        %li=link_to "Venue", "#venue"
-        %li=link_to "Sponsors", "#sponsors"
-        %li=link_to "About Us", "#about"
-        %li=link_to "Blog", "https://medium.com/pittco"
+        %li=link_to "Buy Tickets", "#next-event"
+        %li=link_to "Reserve a Seat", "#venue"
+        %li=link_to "Contact Support", "#sponsors"
 
         %li.dropdown
-          %a.dropbown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
-            Past Events
-            %span.caret
+          = image_tag current_user.profile_photo,
+            :style => "border-radius: 50%;",
+            :class => "dropdown-toggle",
+            :"data-toggle" => "dropdown",
+            :role => "button", 
+            :"aria-haspopup" => "true", 
+            :"aria-expanded" => "false"
 
           %ul.dropdown-menu
-            %li.dropdown-header 2016
-            %li=link_to "Delirium", "#"
-            %li.dropdown-header 2015
-            %li=link_to "Insomnia", "#"
+            %li=link_to "Settings", "#"
+            %li=link_to "Logout", "#"

@@ -1,0 +1,22 @@
+%h1 Seating Chart
+
+.container
+  .row
+    - @seating_chart.seating_rows[0,6].each do |row|
+      .col-md-2
+        - if row.single_column
+          %strong= "Baller Row #{row.id}"
+          - row.seats.each do |seat|
+            - taken = rand(1..2) == 1 ? 'red' : 'green'
+            .row
+              .col-md-1(style="border: 2px solid; padding: 25px; background-color: #{taken}")
+                = seat.id
+
+        - else
+          %strong= "Row #{row.id}"
+          - row.seats.each_slice(2).each do |seats|
+            - taken = rand(1..4) == 4 ? 'red' : 'green'
+            .row
+              - seats.each do |seat|
+                .col-md-1(style="border: 2px solid; padding: 25px; background-color: #{taken}")
+                  = seat.id

@@ -2,14 +2,25 @@ class User < ActiveRecord::Base
   has_many :posts
   serialize :data_hash
 
+  def profile_photo
+    data_hash["info"]["image"]
+  end
+
+  def admin?
+    !!email.match(/\@pittco.org$/)
+  end
+
+  # TODO: Make this not a stub
+  def paid?
+    true
+  end
+
   def self.from_omniauth(access_token)
     data = access_token.info
-    return nil unless data['email'].match /\@pittco.org$/
     user = User.where(email: data['email']).first
 
     unless user
-      user = User.create username: data['name'],
-                         email: data['email'],
+      user = User.create email: data['email'],
                          data_hash: access_token
     end
 
