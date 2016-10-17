@@ -3,9 +3,9 @@
     .row
       .col-md-12
         %h1 Seating Chart
-        %button(type="submit" class="btn btn-default") Reserve Seat
+        %button#choose-seat(type="submit" class="btn btn-default") Reserve Seat
 
-  .container-fluid
+  .container
     .row
       .col-md-12
         %table.table.table-bordered(style="width: 100%; border: 1px solid;")
@@ -15,11 +15,9 @@
                 - if tile.seatable?
                   - tile.seats.each do |seat| 
                     %td.seat-cell(style="border: 1px solid;" data-seat-id="#{seat.id}")
-                      %strong Seat
                       -# %span
                         = seat.id
                 - else
                   %td.empty-space(style="border: 1px solid;" colspan="#{tile.length}")
-                    Empty Space
                     %span
                       = "#{tile.length} Feet"

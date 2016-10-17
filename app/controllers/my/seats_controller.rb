@@ -7,5 +7,8 @@ class My::SeatsController < ApplicationController
   end
 
   def create
+
+
+    render json: {ok: true}
   end
 end
